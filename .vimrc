@@ -23,6 +23,8 @@ nmap <silent> <Up> gk
 
 cmap w!! w !sudo tee % >/dev/null
 
+map <F3> :set relativenumber!<CR>
+
 " Pathogen activation
 filetype off
 
@@ -42,48 +44,24 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 
+nmap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
+
 highlight lCursor guifg=NONE guibg=Cyan
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-"
-" " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fugititive.vim'
 Plugin 'ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
-
-" " All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
-" " To ignore plugin indent changes, instead use:
-" "filetype plugin on
-" "
-" " Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " Put your non-Plugin stuff after this line
-"
-" Enable the list of buffers
+
 let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-nmap <C-]> :bnext<CR>
-nmap <C-[> :bprevious<CR>
