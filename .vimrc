@@ -34,7 +34,7 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 syntax enable
-colorscheme slate
+colorscheme pablo
 
 nmap <Leader>t :TlistToggle<CR>
 
@@ -43,6 +43,7 @@ nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
+nmap <C-n> :nohlsearch<CR>
 
 nmap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -50,8 +51,6 @@ nnoremap <S-Tab> :bprevious<CR>
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-
-highlight lCursor guifg=NONE guibg=Cyan
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
