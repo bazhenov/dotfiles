@@ -9,6 +9,7 @@ set incsearch
 set hlsearch
 set showmatch
 set wildmenu
+set relativenumber
 let mapleader='\'
 
 " отключаем переносы строк по словам
@@ -22,8 +23,6 @@ nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
 cmap w!! w !sudo tee % >/dev/null
-
-map <F3> :set relativenumber!<CR>
 
 " Pathogen activation
 filetype off
