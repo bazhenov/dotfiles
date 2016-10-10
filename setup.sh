@@ -10,3 +10,6 @@ do
 		ln -s $F ~/$FILENAME
 	fi
 done
+
+echo Linking .ssh/config
+ln -s $DIR/ssh_config ~/.ssh/config
