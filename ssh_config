@@ -2,13 +2,15 @@ PreferredAuthentications "publickey,password"
 GSSAPIAuthentication no
 PubkeyAcceptedKeyTypes=+ssh-dss
 
-Host router
-	Hostname 192.168.1.1
-	User root
-
 Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss
+
+Host goods-payperclick.akod.loc
+	IdentityFile ~/.ssh/id_dsa
+	HostKeyAlgorithms +ssh-dss
+	User tech
+	ProxyCommand ssh -e none tunnel@aux-msk.srv.loc %h %p
 
 Host *.akod.loc
 	IdentityFile ~/.ssh/vhost-dsa
@@ -18,7 +20,7 @@ Host *.akod.loc
 	PreferredAuthentications publickey
 
 Host vault.dev
-	User=logs
+	User logs
 
 Host *.dev
-	User=tech
+	User tech
