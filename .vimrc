@@ -37,7 +37,7 @@ colorscheme pablo
 
 nmap <Leader>t :TlistToggle<CR>
 
-nmap <Leader>p :!phpunit<CR>
+nmap <Leader>m :make<CR>
 nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k

@@ -2,6 +2,9 @@ PreferredAuthentications "publickey,password"
 GSSAPIAuthentication no
 PubkeyAcceptedKeyTypes=+ssh-dss
 
+Host *
+	UseKeychain yes
+
 Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss
@@ -24,3 +27,4 @@ Host vault.dev
 
 Host *.dev
 	User tech
+	IdentityFile ~/.ssh/vhost-dsa
