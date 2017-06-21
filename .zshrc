@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+ZSH_THEME="afowler"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PS1='%{$reset_color%}%{${fg[green]}%}%3~ $(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}»%{${reset_color}%} '
 
 export PATH=$JAVA_HOME/bin:$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin
 
