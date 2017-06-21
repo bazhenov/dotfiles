@@ -32,8 +32,14 @@ call pathogen#runtime_append_all_bundles()
 
 filetype plugin indent on
 
+if &term =~# '^screen'
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 syntax enable
-colorscheme pablo
+set termguicolors
+colorscheme srcery-drk
 
 nmap <Leader>t :TlistToggle<CR>
 
@@ -57,9 +63,11 @@ filetype off                  " required
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fugititive.vim'
-Plugin 'ctrlp.vim'
+Plugin 'ctrlp.vim' 
 Plugin 'vim-airline/vim-airline'
 filetype plugin indent on    " required
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:ctrlp_custom_ignore = '\v([\/]node_modules|DS_Store|\.git|target|vendor[\/])|(\.class$)'
