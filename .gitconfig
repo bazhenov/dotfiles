@@ -21,5 +21,3 @@
 	default = current
 [merge]
 	tool = vimdiff
-[diff]
-	external = ~/bin/gitdiff.sh

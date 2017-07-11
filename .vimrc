@@ -53,9 +53,10 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 nmap <C-n> :nohlsearch<CR>
+nmap <F8> :TagbarToggle<CR>
 
 nmap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nmap <S-Tab> :bprevious<CR>
 
 set keymap=russian-jcukenwin
 set iminsert=0
