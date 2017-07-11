@@ -65,13 +65,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'fugititive.vim'
-Plugin 'ctrlp.vim' 
-Plugin 'vim-airline/vim-airline'
+Plugin 'Vundle.vim'
 filetype plugin indent on    " required
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+let buftabline_indicators=1
 
 let g:ctrlp_custom_ignore = '\v([\/]node_modules|DS_Store|\.git|target|vendor[\/])|(\.class$)'
