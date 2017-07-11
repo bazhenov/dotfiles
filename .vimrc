@@ -10,12 +10,16 @@ set hlsearch
 set showmatch
 set wildmenu
 set relativenumber
-let mapleader='\'
+set nofoldenable
 
-" отключаем переносы строк по словам
+" Allowing to switch from unsaved buffer
+set hidden
+
+" Disabling word wrapping
 set linebreak 
 set wrap
 
+let mapleader='\'
 " включаем режим внутристрочной навигации
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
