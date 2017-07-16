@@ -77,7 +77,7 @@ docker-export aglio bazhenov/aglio
 docker-export avr-gcc bazhenov/avr-toolchain
 docker-export avr-objcopy bazhenov/avr-toolchain
 
-search=~/work/search-service
+sr=~/work/search-service
 
 alias docker-host="screen /Users/bazhenov/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 source ~/.zshrc.private
