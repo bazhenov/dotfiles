@@ -1,15 +1,31 @@
-set nocp
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'mkitt/tabline.vim'
+Plugin 'ap/vim-buftabline'
+Plugin 'milkypostman/vim-togglelist'
+call vundle#end()
+filetype plugin indent on    " required
+
 set number
+set relativenumber
 set autoindent
 set tabstop=2
 set fileformat=unix
 set noexpandtab
 set shiftwidth=2
+
 set incsearch
 set hlsearch
+
 set showmatch
 set wildmenu
-set relativenumber
 set nofoldenable
 
 " Allowing to switch from unsaved buffer
@@ -25,6 +41,12 @@ imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
+
+" disable arrow navigations
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -45,8 +67,6 @@ syntax enable
 set termguicolors
 colorscheme srcery-drk
 
-nmap <Leader>t :TlistToggle<CR>
-
 nmap <Leader>m :make<CR>
 nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
@@ -64,13 +84,10 @@ set imsearch=0
 
 set scrolloff=3
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-call vundle#begin()
-Plugin 'Vundle.vim'
-filetype plugin indent on    " required
-
 let buftabline_indicators=1
 
 let g:ctrlp_custom_ignore = '\v([\/]node_modules|DS_Store|\.git|target|vendor[\/])|(\.class$)'
+
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
