@@ -28,3 +28,7 @@ Host vault.dev
 Host *.dev
 	User tech
 	IdentityFile ~/.ssh/vhost-dsa
+
+Host *.farpost.net
+	User tech
+	IdentityFile ~/.ssh/vhost-dsa
