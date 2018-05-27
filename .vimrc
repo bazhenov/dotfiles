@@ -10,6 +10,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'mkitt/tabline.vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'milkypostman/vim-togglelist'
+Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 filetype plugin indent on    " required
 
@@ -50,14 +51,6 @@ noremap <Right> <Nop>
 
 cmap w!! w !sudo tee % >/dev/null
 
-" Pathogen activation
-filetype off
-
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
-filetype plugin indent on
-
 if &term =~# '^screen'
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -65,7 +58,7 @@ endif
 
 syntax enable
 set termguicolors
-colorscheme srcery-drk
+colorscheme mango
 
 nmap <Leader>m :make<CR>
 nmap <C-h> <C-W>h
