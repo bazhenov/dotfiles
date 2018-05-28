@@ -26,6 +26,8 @@ ZSH_THEME="avit"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx brew colored-man common-aliases docker autojump)
 
+ZSH_COMPDUMP=$HOME/.zcompdump
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
