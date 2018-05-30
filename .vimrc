@@ -32,6 +32,8 @@ set nofoldenable
 " Allowing to switch from unsaved buffer
 set hidden
 
+set encoding=utf-8
+
 " Disabling word wrapping
 set linebreak 
 set wrap
