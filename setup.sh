@@ -13,3 +13,7 @@ done
 
 echo Linking .ssh/config
 ln -s $DIR/ssh_config ~/.ssh/config
+
+echo "Linking nvim config"
+mkdir -p ~/.config/nvim
+ln -s $DIR/init.vim ~/.config/nvim/

@@ -44,6 +44,7 @@ export EDITOR=vim
 
 alias utf='iconv -f windows-1251 -t utf8'
 alias notify='terminal-notifier -message "Your command is done sir" -title zsh -sound Glass'
+alias v='nvim'
 
 cdf () {
 	currFolderPath=$( /usr/bin/osascript << EOT
