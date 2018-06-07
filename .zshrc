@@ -1,44 +1,31 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="avit"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want disable red dots displayed while waiting for completion
-# DISABLE_COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew colored-man common-aliases docker autojump)
-
 ZSH_COMPDUMP=$HOME/.zcompdump
+DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
+
+plugins=(git osx brew colored-man common-aliases docker autojump)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PS1='%{$reset_color%}%{${fg[green]}%}%3~ $(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}»%{${reset_color}%} '
+
+export PATH=$HOME/bin:$PATH
+
+# Configuring Java
+jhome="/usr/libexec/java_home"
+if [[ -x $jhome ]] then
+	export JAVA_HOME=`$jhome -v 1.8`
+	export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
+	export PATH=$PATH:$JAVA_HOME/bin
+fi
+
+PROMPT='%{$reset_color%}%{${fg[green]}%}%3~ %{${fg_bold[$CARETCOLOR]}%}»%{${reset_color}%} '
+RPROMPT=""
+
 export CDIFF_OPTIONS="-s -w 0"
-
 export LESS="$LESS -i"
-
-export PATH=$JAVA_HOME/bin:$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin
 
 export EDITOR=nvim
 
@@ -81,7 +68,6 @@ function @() {
 }
 
 docker-export aglio bazhenov/aglio
-
 docker-export avr-gcc bazhenov/avr-toolchain
 docker-export avr-objcopy bazhenov/avr-toolchain
 
