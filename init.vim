@@ -11,6 +11,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 filetype plugin indent on    " required
 

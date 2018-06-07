@@ -40,11 +40,14 @@ export LESS="$LESS -i"
 
 export PATH=$JAVA_HOME/bin:$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin
 
-export EDITOR=vim
+export EDITOR=nvim
 
 alias utf='iconv -f windows-1251 -t utf8'
 alias notify='terminal-notifier -message "Your command is done sir" -title zsh -sound Glass'
 alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias dc='docker-compose'
 
 cdf () {
 	currFolderPath=$( /usr/bin/osascript << EOT
@@ -82,7 +85,5 @@ docker-export aglio bazhenov/aglio
 docker-export avr-gcc bazhenov/avr-toolchain
 docker-export avr-objcopy bazhenov/avr-toolchain
 
-sr=~/work/search-service
-
-alias docker-host="screen /Users/bazhenov/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
+alias docker-host="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 source ~/.zshrc.private
