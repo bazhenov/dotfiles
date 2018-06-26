@@ -13,6 +13,11 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:$PATH
 
+if [ -x "$(command -v brew)" ]; then
+	brew_prefix="$(brew --prefix)"
+	export PATH=$PATH:$brew_prefix/sbin:$brew_prefix/bin
+fi
+
 # Configuring Java
 jhome="/usr/libexec/java_home"
 if [[ -x $jhome ]] then
@@ -73,3 +78,8 @@ docker-export avr-objcopy bazhenov/avr-toolchain
 
 alias docker-host="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 source ~/.zshrc.private
+
+ZSH_SYNTAX_HIGHLIGHT=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f $ZSH_SYNTAX_HIGHLIGHT ]; then
+	source $ZSH_SYNTAX_HIGHLIGHT
+fi

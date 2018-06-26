@@ -5,6 +5,11 @@ PubkeyAcceptedKeyTypes=+ssh-dss
 Host *
 	UseKeychain yes
 
+Host pstorage
+	Hostname 109.126.16.96
+	User bazhenov
+	Port 2022
+
 Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss
