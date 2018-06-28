@@ -18,6 +18,10 @@ if [ -x "$(command -v brew)" ]; then
 	export PATH=$PATH:$brew_prefix/sbin:$brew_prefix/bin
 fi
 
+if [ -x "$(command -v gls)" ]; then
+	alias ls="gls --color=auto --group-directories-first"
+fi
+
 # Configuring Java
 jhome="/usr/libexec/java_home"
 if [[ -x $jhome ]] then
