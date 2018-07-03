@@ -10,6 +10,11 @@ Host pstorage
 	User bazhenov
 	Port 2022
 
+Host pdesktop
+	Hostname 109.126.16.96
+	User bazhenov
+	Port 2122
+
 Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss
