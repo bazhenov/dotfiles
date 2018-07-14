@@ -9,13 +9,15 @@ plugins=(git osx brew colored-man common-aliases docker autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
 export PATH=$HOME/bin:$PATH
 
 if [ -x "$(command -v brew)" ]; then
 	brew_prefix="$(brew --prefix)"
 	export PATH=$PATH:$brew_prefix/sbin:$brew_prefix/bin
+fi
+
+if [ -x "$(command -v gpg)" ]; then
+	export GPG_TTY=$(tty)
 fi
 
 if [ -x "$(command -v gls)" ]; then
