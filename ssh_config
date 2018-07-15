@@ -13,6 +13,10 @@ Host pstorage
 Host pdesktop
 	Hostname 109.126.16.96
 	User bazhenov
+	DynamicForward 3128
+	ForwardAgent yes
+	RemoteCommand tmux attach || tmux new
+	RequestTTY force
 	Port 2122
 
 Host *.srv.loc
