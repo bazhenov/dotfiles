@@ -38,14 +38,19 @@ RPROMPT=""
 export CDIFF_OPTIONS="-s -w 0"
 export LESS="$LESS -i"
 
-export EDITOR=nvim
 
 alias utf='iconv -f windows-1251 -t utf8'
 alias notify='terminal-notifier -message "Your command is done sir" -title zsh -sound Glass'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
 alias dc='docker-compose'
+
+if [ -x "$(command -v nvim)" ]; then
+	export EDITOR=nvim
+	alias v='nvim'
+	alias vi='nvim'
+	alias vim='nvim'
+else
+	export EDITOR=vim
+fi
 
 cdf () {
 	currFolderPath=$( /usr/bin/osascript << EOT
@@ -78,7 +83,6 @@ function @() {
 	docker run -it --rm $1 ${@: 2}
 }
 
-docker-export aglio bazhenov/aglio
 docker-export avr-gcc bazhenov/avr-toolchain
 docker-export avr-objcopy bazhenov/avr-toolchain
 
