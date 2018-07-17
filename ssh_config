@@ -11,13 +11,14 @@ Host pstorage
 	Port 2022
 
 Host pdesktop
-	Hostname 109.126.16.96
 	User bazhenov
+	Hostname 109.126.16.96
+	Port 2122
 	DynamicForward 3128
 	ForwardAgent yes
+	LogLevel QUIET
 	RemoteCommand tmux attach || tmux new
 	RequestTTY force
-	Port 2122
 
 Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
