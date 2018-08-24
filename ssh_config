@@ -24,6 +24,11 @@ Host *.srv.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss
 
+Host artifacts-proxy.akod.loc
+	DynamicForward 31281
+	HostName artifacts.akod.loc
+	LogLevel QUIET
+	
 Host *.akod.loc
 	IdentityFile ~/.ssh/vhost-dsa
 	HostKeyAlgorithms +ssh-dss

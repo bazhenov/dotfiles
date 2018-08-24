@@ -26,6 +26,10 @@ if [ -x "$(command -v gls)" ]; then
 	alias ls="gls --color=auto --group-directories-first"
 fi
 
+if [ -x "$(command -v kubectl)" ]; then
+	alias kc="kubectl"
+fi
+
 # Configuring Java
 jhome="/usr/libexec/java_home"
 if [[ -x $jhome ]] then
