@@ -30,6 +30,11 @@ if [ -x "$(command -v kubectl)" ]; then
 	alias kc="kubectl"
 fi
 
+if [ -d "$HOME/go" ]; then
+	export GOPATH=$HOME/go
+	export PATH=$PATH:$GOPATH/bin
+fi
+
 # Configuring Java
 jhome="/usr/libexec/java_home"
 if [[ -x $jhome ]] then
