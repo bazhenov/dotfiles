@@ -5,6 +5,8 @@ ZSH_COMPDUMP=$HOME/.zcompdump
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 
+export LANG=en_US.UTF-8
+
 plugins=(git osx brew colored-man common-aliases docker autojump)
 
 source $ZSH/oh-my-zsh.sh
