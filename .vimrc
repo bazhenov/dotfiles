@@ -11,6 +11,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 filetype plugin indent on    " required
 
@@ -32,6 +33,7 @@ set nofoldenable
 " Allowing to switch from unsaved buffer
 set hidden
 
+language en_US.UTF-8
 set encoding=utf-8
 
 " Disabling word wrapping
@@ -60,7 +62,7 @@ endif
 
 syntax enable
 set termguicolors
-colorscheme mango
+colorscheme CandyPaper
 
 nmap <Leader>m :make<CR>
 nmap <C-h> <C-W>h
@@ -86,3 +88,5 @@ let g:ctrlp_custom_ignore = '\v([\/]node_modules|DS_Store|\.git|target|vendor[\/
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep'
 endif
+
+autocmd FileType rust setlocal shiftwifth=2

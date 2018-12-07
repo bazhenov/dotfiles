@@ -33,6 +33,7 @@ set nofoldenable
 " Allowing to switch from unsaved buffer
 set hidden
 
+language en_US.UTF-8
 set encoding=utf-8
 
 " Disabling word wrapping
@@ -88,3 +89,5 @@ let g:ctrlp_custom_ignore = '\v([\/]node_modules|DS_Store|\.git|target|vendor[\/
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep'
 endif
+
+autocmd FileType rust setlocal shiftwidth=2 tabstop=2 noexpandtab
