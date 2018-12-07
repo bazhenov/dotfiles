@@ -36,6 +36,12 @@ Host *.akod.loc
 	ProxyCommand ssh -e none tunnel@aux-msk.srv.loc %h %p
 	PreferredAuthentications publickey
 
+Host artifacts.bazadev.net
+	HostKeyAlgorithms +ssh-dss
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/vhost-dsa
+	User tech
+
 Host vault.dev
 	User logs
 
