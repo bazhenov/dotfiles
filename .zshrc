@@ -111,3 +111,5 @@ ZSH_SYNTAX_HIGHLIGHT=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlig
 if [ -f $ZSH_SYNTAX_HIGHLIGHT ]; then
 	source $ZSH_SYNTAX_HIGHLIGHT
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
