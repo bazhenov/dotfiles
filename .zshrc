@@ -28,6 +28,11 @@ if [ -x "$(command -v gls)" ]; then
 	alias ls="gls --color=auto --group-directories-first"
 fi
 
+if [ -x "$(command -v exa)" ]; then
+	alias l="exa --long --group-directories-first"
+	alias lt="l -T -L=2"
+fi
+
 if [ -x "$(command -v kubectl)" ]; then
 	alias kc="kubectl"
 fi

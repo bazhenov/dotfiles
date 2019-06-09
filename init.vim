@@ -12,6 +12,10 @@ Plugin 'ap/vim-buftabline'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-rooter'
+Plugin 'w0rp/ale'
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'autozimu/LanguageClient-neovim'
 call vundle#end()
 filetype plugin indent on    " required
 
@@ -40,7 +44,10 @@ set encoding=utf-8
 set linebreak 
 set wrap
 
-let mapleader='\'
+" Setting space as a leader
+nnoremap <SPACE> <Nop>
+let mapleader=' '
+
 " включаем режим внутристрочной навигации
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
@@ -71,7 +78,8 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 nmap <C-n> :nohlsearch<CR>
-nmap <F8> :TagbarToggle<CR>
+
+nmap <F5> :so $MYVIMRC<CR>
 
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
@@ -91,3 +99,21 @@ if executable('ag')
 endif
 
 autocmd FileType rust setlocal shiftwidth=2 tabstop=2 noexpandtab
+
+set secure
+set exrc
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nmap <leader>w :bd<cr>
+
+nnoremap <silent> <leader>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>lr :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <leader>lR :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>

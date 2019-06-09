@@ -42,12 +42,18 @@ Host artifacts.bazadev.net
 	IdentityFile ~/.ssh/vhost-dsa
 	User tech
 
-Host vault.dev
+Host vault.bazadev.net
 	User logs
 
-Host *.dev
+Host *.bazadev.net
 	User tech
 	IdentityFile ~/.ssh/vhost-dsa
+
+Host *.bazadev.private
+	IdentityFile ~/.ssh/vhost-dsa
+
+Host teamcity.bazadev.private
+	user teamcity
 
 Host *.farpost.net
 	User tech
