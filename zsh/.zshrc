@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="avit"
+ZSH_THEME="arrow"
 ZSH_COMPDUMP=$HOME/.zcompdump
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
@@ -50,12 +50,8 @@ if [[ -x $jhome ]] then
 	export PATH=$PATH:$JAVA_HOME/bin
 fi
 
-PROMPT='%{$reset_color%}%{${fg[green]}%}%3~ %{${fg_bold[$CARETCOLOR]}%}»%{${reset_color}%} '
-RPROMPT=""
-
 export CDIFF_OPTIONS="-s -w 0"
 export LESS="$LESS -i"
-
 
 alias utf='iconv -f windows-1251 -t utf8'
 alias notify='terminal-notifier -message "Your command is done sir" -title zsh -sound Glass'
