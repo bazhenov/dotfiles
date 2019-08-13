@@ -101,6 +101,7 @@ docker-export avr-gcc bazhenov/avr-toolchain
 docker-export avr-objcopy bazhenov/avr-toolchain
 
 alias docker-host="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
+unalias fd
 source ~/.zshrc.private
 
 ZSH_SYNTAX_HIGHLIGHT=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
