@@ -72,7 +72,8 @@ set termguicolors
 colorscheme CandyPaper
 
 language en_US.UTF-8
-nmap <Leader>m :make<CR>
+nmap <Leader>m :!make<CR>
+nmap <Leader>t :!make test<CR>
 nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
