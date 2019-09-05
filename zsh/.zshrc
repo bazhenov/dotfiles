@@ -48,6 +48,7 @@ if [[ -x $jhome ]] then
 	export JAVA_HOME=`$jhome -v 1.8`
 	export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
 	export PATH=$PATH:$JAVA_HOME/bin
+	alias java_home=$jhome
 fi
 
 export CDIFF_OPTIONS="-s -w 0"
