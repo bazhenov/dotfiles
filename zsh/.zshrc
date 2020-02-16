@@ -102,7 +102,7 @@ docker-export avr-objcopy bazhenov/avr-toolchain
 
 alias docker-host="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 unalias fd
-source ~/.zshrc.private
+[ -f ~/.zshrc.private ] && source ~/.zshrc.private
 
 ZSH_SYNTAX_HIGHLIGHT=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f $ZSH_SYNTAX_HIGHLIGHT ]; then
@@ -110,3 +110,6 @@ if [ -f $ZSH_SYNTAX_HIGHLIGHT ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+BROOT=~/.config/broot/launcher/bash/br
+[ -f $BROOT ] && source $BROOT
