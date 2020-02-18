@@ -114,3 +114,6 @@ fi
 
 BROOT=~/.config/broot/launcher/bash/br
 [ -f $BROOT ] && source $BROOT
+
+BROOT=~/Library/Preferences/org.dystroy.broot/launcher/bash/br
+[ -f $BROOT ] && source $BROOT
