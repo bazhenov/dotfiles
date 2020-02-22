@@ -117,3 +117,7 @@ BROOT=~/.config/broot/launcher/bash/br
 
 BROOT=~/Library/Preferences/org.dystroy.broot/launcher/bash/br
 [ -f $BROOT ] && source $BROOT
+
+if [ -x "$(command -v starship)" ]; then
+	eval "$(starship init zsh)"
+fi
