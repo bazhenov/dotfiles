@@ -1,6 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="arrow"
 ZSH_COMPDUMP=$HOME/.zcompdump
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
