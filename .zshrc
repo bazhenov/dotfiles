@@ -1,3 +1,5 @@
+system_type=$(uname -s)
+
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_COMPDUMP=$HOME/.zcompdump

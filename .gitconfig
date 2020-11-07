@@ -1,3 +1,5 @@
+[core]
+	pager = delta
 [color]
 	diff = auto
 	status = auto
