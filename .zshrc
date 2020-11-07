@@ -6,7 +6,7 @@ DISABLE_AUTO_TITLE="true"
 
 export LANG=en_US.UTF-8
 
-plugins=(git osx brew colored-man common-aliases docker autojump)
+plugins=(git osx brew colored-man-pages common-aliases docker autojump)
 
 source $ZSH/oh-my-zsh.sh
 
