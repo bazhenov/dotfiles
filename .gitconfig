@@ -16,7 +16,7 @@
 	autosetuprebase = always
 [core]
 	autocrlf = input
-	excludesfile = ~/.dotfiles/git/.gitignore
+	excludesfile = ~/.gitignore
 [push]
 	default = current
 [merge]
