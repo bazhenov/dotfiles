@@ -16,6 +16,10 @@ if [ -d $HOME/bin ]; then
 	export PATH=$HOME/bin:$PATH
 fi
 
+if [ -d $HOME/.cargo/bin ]; then
+	export PATH=$HOME/.cargo/bin:$PATH
+fi
+
 if [ -x "$(command -v brew)" ]; then
 	brew_prefix="$(brew --prefix)"
 	export PATH=$PATH:$brew_prefix/sbin:$brew_prefix/bin
