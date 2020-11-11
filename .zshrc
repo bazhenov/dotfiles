@@ -2,7 +2,6 @@ system_type=$(uname -s)
 
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_COMPDUMP=$HOME/.zcompdump
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 
@@ -42,27 +41,6 @@ if [ -x "$(command -v kubectl)" ]; then
 	alias kc="kubectl"
 fi
 
-if [ -d "$HOME/go" ]; then
-	export GOPATH=$HOME/go
-	export PATH=$PATH:$GOPATH/bin
-fi
-
-# Configuring Java
-jhome="/usr/libexec/java_home"
-if [[ -x $jhome ]] then
-	export JAVA_HOME=`$jhome -v 1.8`
-	export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
-	export PATH=$PATH:$JAVA_HOME/bin
-	alias java_home=$jhome
-fi
-
-export CDIFF_OPTIONS="-s -w 0"
-export LESS="$LESS -i"
-
-alias utf='iconv -f windows-1251 -t utf8'
-alias notify='terminal-notifier -message "Your command is done sir" -title zsh -sound Glass'
-alias dc='docker-compose'
-
 if [ -x "$(command -v nvim)" ]; then
 	export EDITOR=nvim
 	alias v='nvim'
@@ -71,6 +49,26 @@ if [ -x "$(command -v nvim)" ]; then
 else
 	export EDITOR=vim
 fi
+
+if [ -d "$HOME/go" ]; then
+	export GOPATH=$HOME/go
+	export PATH=$PATH:$GOPATH/bin
+fi
+
+# Configuring Java
+jhome="/usr/libexec/java_home"
+if [[ -x $jhome ]] then
+	export JAVA_HOME=`$jhome`
+	export JAVA_TOOL_OPTIONS="-Dfile.encoding=utf8"
+	export PATH=$PATH:$JAVA_HOME/bin
+	alias java_home=$jhome
+fi
+
+export CDIFF_OPTIONS="-s -w 0"
+export LESS="$LESS -i"
+
+alias dc='docker-compose'
+
 
 cdf () {
 	currFolderPath=$( /usr/bin/osascript << EOT
