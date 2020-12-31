@@ -101,9 +101,6 @@ function @() {
 	docker run -it --rm $1 ${@: 2}
 }
 
-docker-export avr-gcc bazhenov/avr-toolchain
-docker-export avr-objcopy bazhenov/avr-toolchain
-
 alias docker-host="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 unalias fd
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
